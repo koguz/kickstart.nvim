@@ -23,7 +23,6 @@ require('neo-tree').setup {
         ["Y"] = function(state)
           local node = state.tree:get_node()
           local filepath = node:get_id()
-
           local rel_path = vim.fn.fnamemodify(filepath, ":.")
           vim.fn.setreg("+", rel_path)
           vim.notify("Copied relative path: " .. rel_path)
