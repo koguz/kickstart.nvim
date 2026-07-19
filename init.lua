@@ -404,10 +404,6 @@ do
 
 vim.pack.add { gh 'nvim-flutter/flutter-tools.nvim' }
 
-require('flutter-tools').setup {
-    widget_guides = {enabled = true, },
-  }
-
 vim.keymap.set("n", "<leader>ca", function()
   vim.lsp.buf.code_action()
 end, { desc = "Flutter Code action" })
