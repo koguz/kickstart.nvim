@@ -915,9 +915,15 @@ do
   local parsers = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' }
   require('nvim-treesitter').install(parsers)
 
+  
+
   ---@param buf integer
   ---@param language string
   local function treesitter_try_attach(buf, language)
+    -- Stop Treesitter from attaching to LaTeX files so VimTeX can take over
+    if language == 'latex' or language == 'tex' or language == 'bib' then
+      return
+    end  
     -- Check if a parser exists and load it
     if not vim.treesitter.language.add(language) then return end
     -- Enable syntax highlighting and other treesitter features
