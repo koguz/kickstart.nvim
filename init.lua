@@ -214,10 +214,10 @@ do
   vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
   -- TIP: Disable arrow keys in normal mode
-  -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
-  -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
-  -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
-  -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
+  vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
+  vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
+  vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
+  vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
   -- Keybinds to make split navigation easier.
   --  Use CTRL+<hjkl> to switch between windows
@@ -400,20 +400,6 @@ do
   vim.pack.add { gh 'folke/todo-comments.nvim' }
   require('todo-comments').setup { signs = false }
 
-
-
-vim.pack.add { gh 'nvim-flutter/flutter-tools.nvim' }
-
-vim.keymap.set("n", "<leader>ca", function()
-  vim.lsp.buf.code_action()
-end, { desc = "Flutter Code action" })
-
-vim.keymap.set("x", "<leader>ca", function()
-  vim.lsp.buf.code_action()
-end, { desc = "Flutter Code action" })
-
-
-
   -- [[ mini.nvim ]]
   --  A collection of various small independent plugins/modules
   vim.pack.add { gh 'nvim-mini/mini.nvim' }
@@ -516,7 +502,7 @@ do
   -- Enable Telescope extensions if they are installed
   pcall(require('telescope').load_extension, 'fzf')
   pcall(require('telescope').load_extension, 'ui-select')
-  pcall(require('telescope').load_extension, 'flutter')
+
   -- See `:help telescope.builtin`
   local builtin = require 'telescope.builtin'
   vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
