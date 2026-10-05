@@ -172,6 +172,12 @@ do
   -- See `:help 'confirm'`
   vim.o.confirm = true
 
+  vim.opt.autoindent = true
+  vim.opt.shiftwidth = 4
+  vim.opt.tabstop = 4
+  vim.opt.softtabstop = 4
+  vim.opt.expandtab = true
+ 
   -- [[ Basic Keymaps ]]
   --  See `:help vim.keymap.set()`
 
