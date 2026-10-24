@@ -177,7 +177,8 @@ do
   vim.opt.tabstop = 4
   vim.opt.softtabstop = 4
   vim.opt.expandtab = true
- 
+  vim.opt.termguicolors = true
+
   -- [[ Basic Keymaps ]]
   --  See `:help vim.keymap.set()`
 
